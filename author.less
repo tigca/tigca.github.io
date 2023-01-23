@@ -1,0 +1,80 @@
+@import "vars";
+.main-content {
+  font-size: 1.2rem;
+  gap: 20px;
+}
+.profile-card {
+  animation: @animation-ride;
+  max-width: 400px;
+  &__name {
+    color: @primary-color;
+  }
+  &__menu {
+    font-family: var(--bs-body-font-family);
+    padding: 5px 0;
+    gap: 7px 5px;
+  }
+}
+.main-logo-img {
+  animation: @animation-ride;
+  height: 350px;
+  border-radius: 40px;
+}
+.profile-card__item {
+  border-radius: 0.5rem;
+  line-height: 1.3rem;
+  border: 1px solid black;
+  padding: 5px;
+  &:hover{
+    transform: scale(1.09);
+  }
+  &--1{
+    border-color: @color-blue--light;
+  }
+  &--2 {
+    border-color: @color-violet;
+  }
+  &--3 {
+    border-color: @color-orange;
+  }
+  &--4{
+    border-color: @color-blue;
+  }
+  &--5 {
+    border-color: @color-yellow;
+  }
+  &--6 {
+    border-color: @color-blue--dark;
+  }
+  &--7 {
+    border-color: @color-pink;
+  }
+  &--8 {
+    border-color: @color-pink--dark;
+  }
+  &--9{
+    border-color: @color-green;
+  }
+  &--10{
+    border-color: @color-ocean;
+  }
+}
+.achievments{
+  box-shadow: @box-shadow;
+  border-radius: 1rem;
+  padding: 10px;
+  color: darken(@color-gray, 20%);
+  &__item {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+  .profile-link{
+    color: #bb2d3b;
+    &:hover{
+      color: maroon;
+    }
+  }
+}
+.login-img {
+  width: 40px;
+}
