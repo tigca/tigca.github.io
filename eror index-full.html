@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" translate="yes">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=0.5, maximum-scale=1.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tigcu</title>
+  <link rel="shortcut icon" href="assets/img/ava.png" type="image/png">
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-min.css">
+  <script defer src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="assets/js/min-main.js"></script>
+</head>
+<body class="page dark-theme eng">
+<div class="d-flex flex-column">
+  <header class="header position-fixed">
+    <div class="container">
+      <div class="header__content d-flex justify-content-between align-items-center p-4 flex-wrap">
+        <button text="theme" class="btn btn-theme" id="btn-theme" type="button">Theme</button>
+        <div class="header-menu-icon">
+          <span></span>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu d-flex">
+            <li class="header__item">
+              <a class="header__link" href="#main-info" text="advantages">Advantages</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#skills" text="skills">Skills</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#about" text="about">About me</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="btn btn-log-in btn-language" id="log-in" type="button" text="lang">Lang</button>
+      </div>
+    </div>
+  </header>
+  <section class="welcome">
+    <div class="welcome-inner container d-flex flex-column justify-content-center align-items-center">
+      <div class="welcome-inner__intro d-inline-flex flex-column align-items-center gap-5">
+        <img class="intro-inner__logo" src="assets/img/ava.png" alt="Логотип">
+        <h2 text="title" class="intro-inner__title">I'm web dev in the future</h2>
+      </div>
+      <div class="welcome-inner__scroll-down">
+        <a href="#main-info" class="btn btn--scroll">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <main class="main p-2 pt-5" id="main-info">
+    <div class="main-content container d-flex flex-wrap justify-content-center align-items-start mt-5">
+      <div class="main-logo">
+        <img src="assets/img/ava.png" class="main-logo-img" alt="Avatar">
+      </div>
+      <div class="profile-card">
+        <h2 class="profile-card__name">Tigcu<span class="gray"></span></h2>
+        <ul class="profile-card__menu d-flex flex-wrap">
+          <li class="profile-card__item profile-card__item--1"><span class="light-blue">Python</span></li>
+          <li class="profile-card__item profile-card__item--2"><span class="violet">C#</span></li>
+          <li class="profile-card__item profile-card__item--3"><span class="orange">HTML</span></li>
+          <li class="profile-card__item profile-card__item--4"><span class="blue">CSS</span></li>
+          <li class="profile-card__item profile-card__item--5"><span class="yellow">JS</span></li>
+          <li class="profile-card__item profile-card__item--6"><span class="dark-blue">Less</span></li>
+          <li class="profile-card__item profile-card__item--7"><span class="pink">Sass</span></li>
+          <li class="profile-card__item profile-card__item--8"><span class="dark-pink">Bootstrap</span></li>
+          <li class="profile-card__item profile-card__item--9"><span class="green">Node JS</span></li>
+          <li class="profile-card__item profile-card__item--10"><span class="ocean">My SQL</span></li>
+        <ul class="achievments d-flex flex-column">
+          <li class="achievments__item">
+            <span text="member">Member of</span> <a href="https://vk.com/testers" target="_blank">VK Testers</a>
+            [<a href="https://vk.com/bugs?act=reporter&id=614665065" class="profile-link" target="_blank">Profile</a>]
+            <h6 style="font-size: 0.7rem"> <span target="_blank">
+          </li>
+          <li class="achievments__item">
+            <span text="сontributer">Contributer of</span>  <a href="https://developer.mozilla.org/ru/" target = "_blank">MDN</a>
+            [<a class="profile-link" href="https://github.com/scffs?org=mdn&year_list=1" target="_blank">Profile</a>]
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <section class="skills pt-5" id="skills">
+    <div class="container">
+      <h2 class="skills__title title" text="skills">Skills</h2>
+      <p class="sub-text skills-text-2" text="studying">
+        <span class="red">Tools</span> & <span class="red">Languages</span> I've been studying
+      </p>
+      <div class="skills__box">
+        <h3 class="skills__title-sub" text="web">Web-Stack</h3>
+        <ul class="skills__list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item">
+            <img src="assets/img/icons8-html-5.svg" class="skills-img" alt="HTML5" title="HTML5">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/icons8-css3.svg" class="skills-img" alt="CSS3" title="CSS3">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/icons8-javascript.svg" class="skills-img" alt="JS" title="JS">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/PHPMy.png" class="skills-img" alt="PHPMyAdmin" title="PHPMyAdmin">
+          </li>
+          <li class="skills__item">
+            <img class="skills-img" src="assets/img/color-1c4aab2b.png" alt="SCSS" title="SCSS">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/bootstrap-logo.svg" class="skills-img" alt="BS5" title="BS5">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/less-seeklogo.com.svg" class="skills-img" alt="LESS" title="LESS">
+          </li>
+          <li class="skills__item">
+            <img class="skills-img" src="assets/img/React-icon.svg" alt="React" title="React">
+          </li>
+        </ul>
+        <h3 class="skills-text-3 skills__title-sub" text="programming">Programming languages</h3>
+        <ul class="skills-list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item">
+            <img src="assets/img/icons8-c-sharp-logo.svg" class="skills-img" alt="C#" title="C#">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/PHP-logo.svg" class="skills-img" alt="PHP" title="PHP">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/icons8-python.svg" class="skills-img" alt="Python" title="Python">
+          </li>
+          <li class="skills__item">
+            <img class="skills-img" src="assets/img/TS.svg" alt="TypeScript" title="TypeScript">
+          </li>
+        </ul>
+        <h3 class="skills-text-3 skills__title-sub" text="tools">Tools</h3>
+        <ul class="skills-list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item" title="GitHub">
+            <svg class="skills-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <rect width="24" height="24" rx="6" fill="#131314" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6948 5C9.86746 5.00095 8.09999 5.64817 6.70849 6.82594C5.31698 8.00371 4.39218 9.63523 4.09944 11.4288C3.80671 13.2223 4.16512 15.0609 5.1106 16.6157C6.05608 18.1706 7.52698 19.3404 9.26027 19.9159C9.64266 19.9869 9.7867 19.7499 9.7867 19.5484C9.7867 19.3469 9.77905 18.7626 9.7765 18.1239C7.6351 18.5864 7.1826 17.2202 7.1826 17.2202C6.83335 16.333 6.32859 16.0998 6.32859 16.0998C5.63009 15.6258 6.38086 15.6347 6.38086 15.6347C7.15456 15.6892 7.56118 16.4243 7.56118 16.4243C8.24693 17.5941 9.36224 17.2557 9.80072 17.058C9.86955 16.5624 10.0697 16.2253 10.2902 16.0339C8.57961 15.8413 6.78236 15.1848 6.78236 12.252C6.77176 11.4914 7.05562 10.7559 7.5752 10.1976C7.49617 10.0049 7.23231 9.22676 7.6504 8.16975C7.6504 8.16975 8.29665 7.96443 9.76758 8.95427C11.0293 8.6112 12.3604 8.6112 13.6221 8.95427C15.0918 7.96443 15.7367 8.16975 15.7367 8.16975C16.1561 9.22422 15.8922 10.0024 15.8132 10.1976C16.3344 10.756 16.6189 11.4928 16.6073 12.2546C16.6073 15.1936 14.8062 15.8413 13.0931 16.0301C13.3684 16.2684 13.6145 16.7335 13.6145 17.4483C13.6145 18.4724 13.6055 19.2962 13.6055 19.5484C13.6055 19.7525 13.7445 19.9907 14.1345 19.9159C15.868 19.3403 17.339 18.1703 18.2845 16.6152C19.23 15.0601 19.5882 13.2212 19.2951 11.4275C19.0021 9.63381 18.0768 8.00228 16.6848 6.82471C15.2929 5.64715 13.525 5.00035 11.6974 5H11.6948Z" fill="white"/>
+              <path d="M6.91222 15.9895C6.89565 16.0276 6.83446 16.039 6.78475 16.0124C6.73504 15.9857 6.69808 15.9363 6.71592 15.897C6.73377 15.8577 6.79368 15.8476 6.84339 15.8742C6.8931 15.9008 6.93133 15.9515 6.91222 15.9895Z" fill="white"/>
+              <path d="M7.22442 16.3356C7.19802 16.3488 7.16782 16.3525 7.13899 16.346C7.11016 16.3395 7.08449 16.3233 7.06636 16.3001C7.01665 16.2468 7.00645 16.1733 7.04469 16.1404C7.08293 16.1074 7.15177 16.1226 7.20148 16.1759C7.25119 16.2291 7.26266 16.3026 7.22442 16.3356Z" fill="white"/>
+              <path d="M7.52791 16.7753C7.48075 16.8083 7.40044 16.7753 7.35583 16.7094C7.34349 16.6976 7.33368 16.6834 7.32698 16.6678C7.32028 16.6521 7.31682 16.6352 7.31682 16.6182C7.31682 16.6011 7.32028 16.5843 7.32698 16.5686C7.33368 16.5529 7.34349 16.5388 7.35583 16.5269C7.40299 16.4952 7.48329 16.5269 7.52791 16.5916C7.57252 16.6562 7.57379 16.7424 7.52791 16.7753Z" fill="white"/>
+              <path d="M7.93963 17.2012C7.89757 17.2481 7.81217 17.2354 7.74206 17.172C7.67196 17.1087 7.65538 17.0225 7.69745 16.9769C7.73951 16.9312 7.82491 16.9439 7.89757 17.006C7.97022 17.0681 7.98424 17.1556 7.93963 17.2012Z" fill="white"/>
+              <path d="M8.51694 17.4496C8.49782 17.5091 8.41114 17.5357 8.32447 17.5104C8.23779 17.485 8.18043 17.4141 8.197 17.3532C8.21357 17.2924 8.30153 17.2645 8.38948 17.2924C8.47743 17.3203 8.53351 17.3875 8.51694 17.4496Z" fill="white"/>
+              <path d="M9.14672 17.4927C9.14672 17.5548 9.07534 17.608 8.98357 17.6093C8.89179 17.6105 8.81659 17.5598 8.81659 17.4977C8.81659 17.4356 8.88797 17.3824 8.97974 17.3811C9.07151 17.3799 9.14672 17.4293 9.14672 17.4927Z" fill="white"/><path d="M9.73302 17.3951C9.74449 17.4572 9.68076 17.5219 9.58899 17.5371C9.49721 17.5523 9.41691 17.5155 9.40544 17.4547C9.39396 17.3938 9.46025 17.3279 9.54947 17.3115C9.6387 17.295 9.72155 17.333 9.73302 17.3951Z" fill="white"/>
+            </svg>
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/MySQL_textlogo.svg" class="skills-img" alt="MySQL" title="MySQL">
+          </li>
+        </ul>
+      </div>
+      <p class="skills-text-2 sub-text" text="future">In the near future I plan to learn
+        <span class="red">tools</span> / <span class="red">languages</span> such as
+      </p>
+      <div class="skills__box">
+        <h3 class="skills__title-sub" text="frameworks">Web-Frameworks</h3>
+        <ul class="skills__list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item">
+            <img class="skills-img" src="assets/img/Vue.js_Logo_2.svg" alt="VUE JS" title="Vue js">
+          </li>
+          <li class="skills__item">
+            <img class="skills-img" src="assets/img/Angular_full_color_logo.svg" alt="Angular" title="Angular">
+          </li>
+        </ul>
+        <h3 class="skills-text-3 skills__title-sub" text="libraries">Libraries</h3>
+        <ul class="skills-list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item">
+            <img src="assets/img/jquery-icon.svg" class="skills-img" alt="jQuery" title="jQuery">
+          </li>
+        </ul>
+        <h3 class="skills-text-3 skills__title-sub" text="tools">Tools</h3>
+        <ul class="skills-list d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <li class="skills__item">
+            <img src="assets/img/1c_bitrix_logo.svg" class="skills-img" alt="1C BITRIX" title="1C BITRIX">
+          </li>
+          <li class="skills__item">
+            <img src="assets/img/wordpress.png" class="skills-img" alt="WordPress" title="WordPress">
+          </li>
+  <section id="about" class="pt-5">
+    <h2 class="title" text="about"></h2>
+    <p class="sub-text skills-text-2" text="aboutInf">
+       <span class="red"></span> <br> <span class="red"></span> 
+    </p>
+      </div>
+    </div>
+  </section>  
+  <footer class="footer mt-5 d-flex">
+    <div class="footer__content d-flex">
+      <ul class="footer__list d-flex">
+        <li class="footer__item">
+          <a href="https://github.com/tigca" target="_blank">
+            <img class="git footer__link-img" src="assets/img/GitHub-Mark-Light-120px-plus.png" alt="GitHub" title="My GitHub acc">
+          </a>
+        </li>
+        <li class="footer__item">
+          <a href="https://t.me/tigcu" target="_blank">
+            <img class="footer__link-img" src="assets/img/TGW.png" alt="TG" title="My TG acc">
+          </a>
+        </li>
+        <li class="footer__item">
+          <a href="https://vk.com/mtige" target="_blank">
+            <img class="footer__link-img" src="assets/img/VKW.svg" alt="VK" title="My VK page">
+          </a>
+        </li>
+        <li class="footer__item">
+          </a>
+        </li>
+        <li class="footer__item">
+        </li>
+      </ul>
+    </div>
+    <div class="footer-copyright gray">
+      <i>2023-2026 &copy; by Tigcu</i>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
