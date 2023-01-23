@@ -1,0 +1,39 @@
+@import "vars";
+.welcome{
+  height: 100vh;
+  &-inner{
+    height: 92%;
+    gap:30px;
+}
+  &-inner__intro{
+    margin-top: 230px;
+    display: inline-flex;
+    flex: 1 1 auto;
+  }
+
+}
+.btn.btn--scroll{
+  color: @primary-color;
+  background: none;
+  &:hover{
+    background-color: #fff;
+  }
+}
+.intro-inner__logo{
+  width: 128px;
+  border-radius: 50%;
+}
+.intro-inner__title{
+  background: linear-gradient(45deg, lighten(@primary-color, 10%), darken(@primary-color, 20%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: table;
+  font-size: 2rem;
+  font-weight: bolder;
+  &:hover{
+    background: linear-gradient(45deg, darken(@primary-color, 30%), @primary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
+  }
+}
