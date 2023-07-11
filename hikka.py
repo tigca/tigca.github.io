@@ -1,65 +1,66 @@
-from hikka.types import Message
-from .. import loader, utils
+import logging
 
-@loader.tds
-class NotesModule(loader.Module):
-    strings = {
-        "name": "Notes"
-    }
-    
-    def __init__(self):
-        self.notes = {}
-    
-    async def client_ready(self, client, db):
-        self.client = client
-    
-    async def save_notes(self):
-        await self.client.save_module_value(self.__name__, self.notes)
-    
-    async def load_notes(self):
-        self.notes = await self.client.get_module_value(self.__name__, {})
-    
-    async def on_module_load(self):
-        await self.load_notes()
-    
-    async def on_module_unload(self):
-        await self.save_notes()
-    
-    @loader.command()
-    async def note(self, message: Message):
-        '''Сохранить заметку'''
-        note_text = utils.get_args_raw(message)
-        if note_text:
-            note_id = len(self.notes) + 1
-            self.notes[note_id] = note_text
-            await utils.answer(message, f"Заметка сохранена с идентификатором {note_id}.")
-            await self.save_notes()
-        else:
-            await utils.answer(message, "Пожалуйста, укажите текст заметки.")
-    
-    @loader.command()
-    async def notes(self, message: Message):
-        '''Посмотреть заметки'''
-        if self.notes:
-            notes_list = "\n".join([f"{note_id}: {note_text}" for note_id, note_text in self.notes.items()])
-            await utils.answer(message, f"Список заметок:\n{notes_list}")
-        else:
-            await utils.answer(message, "Нет сохраненных заметок.")
-    
-    @loader.command()
-    async def delnote(self, message: Message):
-        '''Удалить заметку'''
-        note_id = utils.get_args_raw(message)
-        if note_id:
-            try:
-                note_id = int(note_id)
-                if note_id in self.notes:
-                    del self.notes[note_id]
-                    await utils.answer(message, f"Заметка с идентификатором {note_id} удалена.")
-                    await self.save_notes()
-                else:
-                    await utils.answer(message, f"Заметки с идентификатором {note_id} не существует.")
-            except ValueError:
-                await utils.answer(message, "Неверный формат идентификатора заметки.")
-        else:
-            await utils.answer(message, "Пожалуйста, укажите идентификатор заметки.")
+from telethon import events, sync
+from telethon.tl.types import Message
+
+logger = logging.getLogger(__name__)
+
+notes = {}
+
+# Function to add a new note
+async def add_note_cmd(message: Message):
+    syntax_error = False
+    try:
+        folder, note = message.text.split(' ',1)[1].split(' ',1)
+    except ValueError:
+        syntax_error = True
+    if syntax_error or not folder or not note:
+        await message.respond('Invalid syntax, please use `.note <folder> <note>`')
+        return
+    if folder not in notes:
+        notes[folder] = []
+    notes[folder].append(note)
+    await message.respond(f'Added note "{note}" to {folder}')
+
+# Function to fetch notes
+async def fetch_notes_cmd(message: Message):
+    if not notes:
+        await message.respond('No notes found')
+        return
+    notes_list = ''
+    for folder, notes_in_folder in notes.items():
+        notes_list += f'<b>{folder.capitalize()}:</b>\n'
+        for note in notes_in_folder:
+            notes_list += f'- {note}\n'
+    await message.respond(notes_list)
+
+# Function to delete a note
+async def delete_note_cmd(message: Message):
+    syntax_error = False
+    try:
+        folder, note = message.text.split(' ',1)[1].split(' ',1)
+    except ValueError:
+        syntax_error = True
+    if syntax_error or not folder or not note:
+        await message.respond('Invalid syntax, please use `.delnote <folder> <note>`')
+        return
+    if folder not in notes or note not in notes[folder]:
+        await message.respond(f'Note "{note}" not found in {folder}')
+        return
+    notes[folder].remove(note)
+    await message.respond(f'Deleted note "{note}" from {folder}')
+
+# Create the event handler for new messages
+@events.register(events.NewMessage(pattern=r'\.note'))
+async def add_note_handler(event):
+    await add_note_cmd(event.message)
+
+# Create the event handler for new messages
+@events.register(events.NewMessage(pattern=r'\.notes'))
+async def fetch_notes_handler(event):
+    await fetch_notes_cmd(event.message)
+
+# Create the event handler for new messages
+@events.register(events.NewMessage(pattern=r'\.delnote'))
+async def delete_note_handler(event):
+   
