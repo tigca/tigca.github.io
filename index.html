@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>My Bio</title>
-    <style>
-        body {
-            font-family: monospace;
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        p {
-            margin-bottom: 40px;
-        }
-        .cursor {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #fff;
-            z-index: 100;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Timur's Bio</title>
+<style>
+body {
+font-family: monospace;
+background-color: #000;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+h1 {
+margin-bottom: 20px;
+}
+p {
+margin-bottom: 40px;
+}
+.cursor {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-0 -50%) (50 %)
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: #fff;
+z-index: 100;
+}
+</style>
 </head>
 <body>
-    <h1>Hello!</h1>
-    <p>My name is Ivan and I'm a 13-year-old developer from Veliky Novgorod, Russia.</p>
-    <p>I've been coding since I was 8 years old and I'm passionate about learning new things every day.</p>
-    <p>I mostly work with Bash scripts, but I'm also interested in other programming languages.</p>
-    <p>In my free time, I like to read books and watch tutorials to improve my skills.</p>
-    <p>My goal is to become a professional programmer and create something amazing that will change people's lives.</p>
-    <div class="cursor"></div>
-    <script>
-        // Стиль cursor
-        document.addEventListener("keydown", function(event) {
-            event.stopPropagation();
-            var key = event.key;
-            switch (key) {
-                case "ArrowUp":
-                    event.preventDefault();
-                    break;
-                default:
-                    return;
-            }
-            var cursor = document.querySelector(".cursor");
-            cursor.style.transform = "translateY(" + (cursor.offsetTop - 10) + "px)";
-        });
-    </script>
+<h1>Hello! My name is Timur, and I'm a 13-year-old programmer from Volgograd, Russia.</h1>
+<p>I'm a white hat hacker and I love learning new things. I've been coding since I was 8 years old and I'm passionate about it.</p>
+<p>I mostly work with Bash scripts, but I'm also interested in other programming languages.</p>
+<p>In my free time, I like to read books and watch tutorials to improve my skills.</p>
+<p>My goal is to become a professional programmer and create something amazing that will change people's lives.</p>
+<div class="cursor"></div>
+<script>
+// Стиль cursor
+document.addEventListener("keydown", function(event) {
+event.stopPropagation();
+var key = event.key;
+switch (key) {
+case "ArrowUp":
+event.preventDefault();
+break;
+default:
+return;
+}
+var cursor = document.querySelector(".cursor");
+cursor.style.transform = "translateY(" + (cursor.offsetTop - 10) + "px)";
+});
+</script>
+<!-- Function to type text -->
+<script>
+var text = "I'm a 13-year-old programmer from Volgograd, Russia. I'm a white hat hacker and I love learning new things. I've been coding since I was 8 years old and I'm passionate about it.";
+var speed = 50; // Speed of typing in milliseconds
+var timeout = 1000; // Timeout between keys press in milliseconds
+    function typeText() {        
+var currentPosition = 0;        
+var charArray = text.split("");                
+setInterval(function() {            
+if (currentPosition < charArray.length) {
+                document.getElementById("typed-text").innerHTML += charArray[currentPosition];
+                currentPosition++;            
+} else {                
+clearInterval(interval);            
+}        
+}, speed);    
+}        
+function startTyping() {
+        interval = setInterval(typeText, timeout);    
+}    
+    window.onload = startTyping;
+</script>
+<div id="typed-text"></div>
 </body>
 </html>
